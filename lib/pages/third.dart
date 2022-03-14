@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class third extends StatefulWidget {
   const third({Key? key}) : super(key: key);
@@ -27,19 +28,21 @@ class _thirdState extends State<third> {
                         title: Text('add call'),
                       ),
                     ),
-                PopupMenuItem(child: ListTile(
-                  leading: Icon(Icons.messenger),
-                  title: Text('messege'),
-                ),
-                ),
-                PopupMenuItem(child: ListTile(
-                  leading: Icon(Icons.android),
-                  title: Text('android'),
-                ),
-                ),
-                 PopupMenuDivider(height: 60),
-                 PopupMenuItem(child: Text('Item A')),
-                 PopupMenuItem(child: Text('Item B')),
+                    PopupMenuItem(
+                      child: ListTile(
+                        leading: Icon(Icons.messenger),
+                        title: Text('messege'),
+                      ),
+                    ),
+                    PopupMenuItem(
+                      child: ListTile(
+                        leading: Icon(Icons.android),
+                        title: Text('android'),
+                      ),
+                    ),
+                    PopupMenuDivider(height: 60),
+                    PopupMenuItem(child: Text('Item A')),
+                    PopupMenuItem(child: Text('Item B')),
                   ])
         ],
       ),
@@ -48,7 +51,6 @@ class _thirdState extends State<third> {
         selectedFontSize: 15,
         unselectedFontSize: 12,
         backgroundColor: Colors.white70,
-
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ('Home')),
           BottomNavigationBarItem(icon: Icon(Icons.camera_alt_sharp), label: ('Camera')),
@@ -59,6 +61,28 @@ class _thirdState extends State<third> {
             selectedindex = index;
           });
         },
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
+              child: TextField(
+                decoration: InputDecoration(
+                    label: Text(
+                      'Name',
+                      style: TextStyle(fontSize: 18, color: Colors.deepPurple),
+                    ),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
+                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.deepPurple), borderRadius: BorderRadius.all(Radius.circular(30)))),
+                cursorHeight: 25,
+                style: TextStyle(fontSize: 20),
+                obscureText: true,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
