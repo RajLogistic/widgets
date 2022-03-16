@@ -33,7 +33,7 @@ class _rohanState extends State<first> {
         centerTitle: true,
       ),
 
-      body: ListView.builder(itemCount: modellist.length, itemBuilder: (context, index) => MyList(item : modellist[index])),
+      body: GridView.builder(itemCount: modellist.length, itemBuilder: (context, index) => MyList(item : modellist[index]), gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),),
     );
   }
 

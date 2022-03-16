@@ -1,8 +1,26 @@
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:splashscreen/splashscreen.dart';
+import 'package:tmdb_flutter/pages/third.dart';
+
+
+class Splash extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SplashScreen(
+      seconds: 4,
+      navigateAfterSeconds: new second(),
+      image: new Image.network('https://www.pngfind.com/pngs/m/185-1852592_nuff-said-show-me-the-code-flutter-logo.png'),
+      loadingText: Text("Loading"),
+      photoSize: 100.0,
+      loaderColor: Colors.blue,
+    );
+  }
+}
 
 class second extends StatefulWidget {
   const second({Key? key}) : super(key: key);
@@ -23,7 +41,8 @@ class _secondState extends State<second> {
           title: Text('Second'),
         ),
         drawer: Drawer(
-          child: ListView(
+          backgroundColor: Colors.indigoAccent,
+          child: Column(
             children: [
               DrawerHeader(
                 decoration: BoxDecoration(color: Colors.indigoAccent),
@@ -32,56 +51,133 @@ class _secondState extends State<second> {
                   style: TextStyle(fontFamily: GoogleFonts.lato().fontFamily, fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.orangeAccent,
-                ),
-                title: Text('Tmdb',style: TextStyle(fontSize: 18),),
-                onTap: (){
-                  Navigator.popAndPushNamed(context, '/first');
-                },
+              Flexible(
+                child: ListView(children: [Card(
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.orangeAccent,
+                    ),
+                    title: Text('Tmdb',style: TextStyle(fontSize: 18),),
+                    onTap: (){
+                      Navigator.popAndPushNamed(context, '/first');
+                    },
 
-              ),
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.orangeAccent,
+                  ),
                 ),
-                title: Text('BottomNavigation',style: TextStyle(fontSize: 18),),
-                onTap: (){
-                  Navigator.popAndPushNamed(context, '/third');
-                },
+                  Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.orangeAccent,
+                      ),
+                      title: Text('BottomNavigation',style: TextStyle(fontSize: 18),),
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>third()));
+                      },
 
-              ),
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.orangeAccent,
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.orangeAccent,
+                      ),
+                      title: Text('Scrollabe_Tab',style: TextStyle(fontSize: 18),),
+                      onTap: (){
+                        Navigator.popAndPushNamed(context, '/fourth');
+                      },
+
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.orangeAccent,
+                      ),
+                      title: Text('Button',style: TextStyle(fontSize: 18),),
+                      onTap: (){
+                        Navigator.popAndPushNamed(context, '/fifth');
+                      },
+
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.orangeAccent,
+                      ),
+                      title: Text('Bottomsheet',style: TextStyle(fontSize: 18),),
+                      onTap: (){
+                        Navigator.popAndPushNamed(context, '/sixth');
+                      },
+
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.orangeAccent,
+                      ),
+                      title: Text('table',style: TextStyle(fontSize: 18),),
+                      onTap: (){
+                        Navigator.popAndPushNamed(context, '/seven');
+                      },
+
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.orangeAccent,
+                      ),
+                      title: Text('PageView',style: TextStyle(fontSize: 18),),
+                      onTap: (){
+                        Navigator.popAndPushNamed(context, '/eight');
+                      },
+
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.orangeAccent,
+                      ),
+                      title: Text('Gesture',style: TextStyle(fontSize: 18),),
+                      onTap: (){
+                        Navigator.popAndPushNamed(context, '/nine');
+                      },
+
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.orangeAccent,
+                      ),
+                      title: Text('Localization',style: TextStyle(fontSize: 18),),
+                      onTap: (){
+                        Navigator.popAndPushNamed(context, '/ten');
+                      },
+
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.orangeAccent,
+                      ),
+                      title: Text('sql',style: TextStyle(fontSize: 18),),
+                      onTap: (){
+                        Navigator.popAndPushNamed(context, '/eleven');
+                      },
+
+                    ),
+                  ),
+                ],
                 ),
-                title: Text('Scrollabe_Tab',style: TextStyle(fontSize: 18),),
-                onTap: (){
-                  Navigator.popAndPushNamed(context, '/fourth');
-                },
-
               ),
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.orangeAccent,
-                ),
-                title: Text('Button',style: TextStyle(fontSize: 18),),
-                onTap: (){
-                  Navigator.popAndPushNamed(context, '/fifth');
-                },
 
-              ),
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.orangeAccent,
-                ),
-                title: Text('Bottomsheet',style: TextStyle(fontSize: 18),),
-                onTap: (){
-                  Navigator.popAndPushNamed(context, '/sixth');
-                },
 
-              ),
+
             ],
           ),
         ),
