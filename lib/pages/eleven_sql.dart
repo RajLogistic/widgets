@@ -98,7 +98,7 @@ class _elevenState extends State<eleven> {
     return this.handler.insertUser(listOfUsers);
   }
 
-  Future dialogwidget(BuildContext context) {
+   dialogwidget(BuildContext context) {
     return showDialog(
         context: context,
         builder: (context) {

@@ -52,9 +52,9 @@ class _thirdState extends State<third> {
         unselectedFontSize: 12,
         backgroundColor: Colors.white70,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ('Home')),
-          BottomNavigationBarItem(icon: Icon(Icons.camera_alt_sharp), label: ('Camera')),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ('Profile')),
+          BottomNavigationBarItem(icon: Icon(Icons.home_filled), ),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart_sharp),),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite_outlined),),
         ],
         onTap: (int index) {
           setState(() {

@@ -6,12 +6,15 @@ import 'package:tmdb_flutter/pages/eleven_sql.dart';
 import 'package:tmdb_flutter/pages/fifth_button.dart';
 import 'package:tmdb_flutter/pages/first.dart';
 import 'package:tmdb_flutter/pages/fourth_tab.dart';
+import 'package:tmdb_flutter/pages/login.dart';
 import 'package:tmdb_flutter/pages/nine_gesture.dart';
 import 'package:tmdb_flutter/pages/second_list.dart';
 import 'package:tmdb_flutter/pages/seven_table.dart';
 import 'package:tmdb_flutter/pages/sixth_bottomsheet.dart';
 import 'package:tmdb_flutter/pages/ten_local.dart';
 import 'package:tmdb_flutter/pages/third.dart';
+import 'package:tmdb_flutter/pages/thirteen_clock.dart';
+import 'package:tmdb_flutter/pages/twelve_sharedpreference.dart';
 import 'l10n/l10n.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -42,6 +45,10 @@ void main() {
       '/nine':(context)=>nine(),
       '/ten':(context)=>ten(),
       '/eleven':(context)=>eleven(),
+      '/twelve':(context)=>twelve(),
+      '/login':(context)=>Login(),
+      '/thirteen':(context)=>thirteen(),
+
     },
     debugShowCheckedModeBanner: false,
   ));

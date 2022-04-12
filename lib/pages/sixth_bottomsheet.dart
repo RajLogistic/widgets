@@ -33,12 +33,10 @@ class _sixthState extends State<sixth> {
                           IconButton(
                             onPressed: () {
                               Navigator.pop(context);
-                              Transform.rotate(angle: 180*math.pi/180);
                             },
                             icon: (Icon(Icons.keyboard_arrow_up_sharp)),
                             iconSize: 40,
                           ),
-
                         ]),
                       );
                     });

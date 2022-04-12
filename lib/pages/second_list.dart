@@ -12,6 +12,7 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
+
       seconds: 4,
       navigateAfterSeconds: new second(),
       image: new Image.network('https://www.pngfind.com/pngs/m/185-1852592_nuff-said-show-me-the-code-flutter-logo.png'),
@@ -168,6 +169,30 @@ class _secondState extends State<second> {
                       title: Text('sql',style: TextStyle(fontSize: 18),),
                       onTap: (){
                         Navigator.popAndPushNamed(context, '/eleven');
+                      },
+
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.orangeAccent,
+                      ),
+                      title: Text('shared_preferences',style: TextStyle(fontSize: 18),),
+                      onTap: (){
+                        Navigator.popAndPushNamed(context, '/twelve');
+                      },
+
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.orangeAccent,
+                      ),
+                      title: Text('Clock',style: TextStyle(fontSize: 18),),
+                      onTap: (){
+                        Navigator.popAndPushNamed(context, '/thirteen');
                       },
 
                     ),
